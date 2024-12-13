@@ -2,7 +2,7 @@ package streamConcept;
 
 //Limit(n)
 //skip(n)
-//takeWhile(n):- as long as condition true will take elements from this
+//takeWhile(n):- as long as condition true will take elements from this stream
 //dropWhile(n):- reverse of take while
 
 import java.util.ArrayList;
@@ -24,8 +24,17 @@ public class SlicingStream {
         listOfMovie.add(m4);
         listOfMovie.add(m5);
 
-       // listOfMovie.stream().skip(2).forEach(mov-> System.out.println(mov.getTitle()));
+//        listOfMovie.stream().skip(2).forEach(mov-> System.out.println(mov.getTitle()));
 //        listOfMovie.stream().limit(2).forEach(mov-> System.out.println(mov.getTitle()));
-        
+
+
+        // Jb ek baar 30 pr aayega then condition fail ho jaayega then wo aage ke stream ko check nahi karega
+      //  listOfMovie.stream().takeWhile(m->m.getLikes()<30).forEach(m-> System.out.println(m.getTitle()+" "+m.getLikes()));
+
+
+//   Jb tk condition true hai tb tk drop
+     listOfMovie.stream().dropWhile(m->m.getLikes()<30).forEach(m-> System.out.println(m.getTitle()+" "+m.getTitle()));
+
+
     }
 }
