@@ -1,6 +1,6 @@
 package streamConcept;
 
-public class Movie {
+public class Movie implements Comparable<Movie>{
     public String title;
 
     public int likes;
@@ -19,4 +19,8 @@ public class Movie {
     }
 
 
+    @Override
+    public int compareTo(Movie o) {
+        return this.getLikes()-o.getLikes();
+    }
 }
